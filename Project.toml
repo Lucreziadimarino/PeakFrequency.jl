@@ -1,0 +1,12 @@
+name = "PeakFrequency"
+uuid = "c837bc81-f0f9-4bb5-b7bf-c924d01037f9"
+version = "0.1.0"
+authors = ["Pc "]
+
+[deps]
+DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
+FourierAnalysis = "e7e9c730-dc46-11e9-3633-f1ab55cc17e1"
+
+[compat]
+DataFrames = "1.8.1"
+FourierAnalysis = "1.2.7"
