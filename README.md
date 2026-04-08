@@ -388,8 +388,8 @@ To test the package on real human EEG data, open the package root folder and run
 julia examples/example.jl
 ```
 
-[!NOTE]
-The example script illustrates how to load, process, and analyze multichannel EEG data using the functions provided by PeakFrequency.
+> [!NOTE]
+> The example script illustrates how to load, process, and analyze multichannel EEG data using the functions provided by PeakFrequency.
 
 The example showcases the following workflow:
 
