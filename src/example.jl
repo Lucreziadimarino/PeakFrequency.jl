@@ -25,7 +25,7 @@ plotSpectra(S, sr, wl, DC, taper, flabels, func, smoother, plotArgs) =
 # 1. DATA INPUT
 ############################
 
-dir = joinpath(abspath(homedir(), "...", "..."), "Example Data")  #Insert your own path
+dir = joinpath(pwd(), "Example Data") 
 
 
 
