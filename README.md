@@ -53,6 +53,7 @@ After downloading or cloning the repository, open the package folder in VS Code 
 > ```julia
 > using Pkg
 > Pkg.add("Revise")
+> Pkg.add(url="https://github.com/Lucreziadimarino/PeakFrequency.jl")
 > ```
 
 To build and load the package locally, execute the file:
