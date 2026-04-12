@@ -409,7 +409,7 @@ Peak frequencies, center-of-gravity values, valid channels, and estimated aperio
 ![separator](Documents/separator2.png)
 
 <a id="about-the-authors"></a>
-## 🪪 About the Authors 
+## 🪪 About the Authors
 
 [Lucrezia Di Marino](https://www.researchgate.net/profile/Lucrezia-Di-Marino-2) is a PhD student in Information and Communication Technology for Health (ICTH) at of the University of Naples Federico II. 
 **Contact**: lucrezia.dimarino2@unina.it
