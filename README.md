@@ -32,7 +32,7 @@ A detailed methodological report describing the theoretical rationale, aperiodic
 - 📖 [Problem Statement, Notation and Nomenclature](#-problem-statement-notation-and-nomenclature)
 - 📑 [API](#-api) 
 - 📝 [Examples](#-examples)
-- 🪪 [About the Author](#️-about-the-author)
+- 🪪 [About the Authors](#-about-the-authors)
 - 📎 [Contribute](#-contribute)
 - 🎓 [References](#-references)
 
@@ -408,7 +408,8 @@ Peak frequencies, center-of-gravity values, valid channels, and estimated aperio
 
 ![separator](Documents/separator2.png)
 
-## 🪪 About the Author
+<a id="about-the-authors"></a>
+## 🪪 About the Authors
 
 [Lucrezia Di Marino](https://www.researchgate.net/profile/Lucrezia-Di-Marino-2) is a PhD student in Information and Communication Technology for Health (ICTH) at of the University of Naples Federico II. 
 **Contact**: lucrezia.dimarino2@unina.it
@@ -422,7 +423,7 @@ Peak frequencies, center-of-gravity values, valid channels, and estimated aperio
 
 ## 📎 Contribute
 
-Please contact the author if you are interested in contributing.
+Please contact the authors if you are interested in contributing.
 
 [▲ index](#-index)
 
