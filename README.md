@@ -276,7 +276,6 @@ This function is intended for quick inspection, reporting, and downstream analys
 
 [▲ index](#-index)
 
-
 ![separator](Documents/separator2.png)
 
 ## 📝 Examples
