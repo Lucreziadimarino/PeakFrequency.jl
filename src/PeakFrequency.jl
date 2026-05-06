@@ -207,7 +207,7 @@ function find_peak(
         empty!(mins)
         empty!(maxs)
 
-        for j = a1:a2
+        for j = (a1+3):(a2-3)
             if S_[j-1] >= S_[j] <= S_[j+1] &&
                S_[j-2] >= S_[j] <= S_[j+2] &&
                S_[j-3] >= S_[j] <= S_[j+3]
