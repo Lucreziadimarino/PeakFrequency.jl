@@ -56,11 +56,6 @@ After downloading or cloning the repository, open the package folder in VS Code 
 > Pkg.add(url="https://github.com/Lucreziadimarino/PeakFrequency.jl")
 > ```
 
-To build and load the package locally, execute the file:
-
-```text
-src/extras/LOCAL_BUILD.jl
-```
 
 [▲ index](#-index)
 
