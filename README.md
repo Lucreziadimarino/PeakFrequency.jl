@@ -55,7 +55,12 @@ After downloading or cloning the repository, open the package folder in VS Code 
 > Pkg.add("Revise")
 > Pkg.add(url="https://github.com/Lucreziadimarino/PeakFrequency.jl")
 > ```
-
+>
+> Once installed, the package will be available globally in your Julia environment and can be loaded from anywhere with:
+>
+> ```julia
+> using PeakFrequency
+> ```
 
 [▲ index](#-index)
 
