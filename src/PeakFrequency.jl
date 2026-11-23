@@ -245,7 +245,7 @@ function find_peak(
     end
 
     # Remove weak maxima
-    if length(maxs) > 1 && !isempty(mins)
+    if !isempty(mins)
         j = 1
         while j <= length(maxs)
             _, pos = findmin(abs.(mins .- maxs[j]))
