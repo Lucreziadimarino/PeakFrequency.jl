@@ -343,11 +343,18 @@ end
 #       PF_ch = detected peak frequency returned by `find_peak`
 #
 # 6) Channel-wise CoG Estimation
-#    CoG is computed as:
-#       CoG_ch = Σ(f_i * P_corr(f_i)) / Σ(P_corr(f_i))
+#    CoG is computed on the unsmoothed aperiodic-corrected
+#    spectrum using positive excess above the unit baseline:
+#
+#       w_i = max(P_corr(f_i) - 1, 0)
+#       CoG_ch = Σ(f_i * w_i) / Σ(w_i)
+#
+#    CoG is estimated only for channels with a valid PF.
+#    Using the unsmoothed spectrum avoids smoothing-induced
+#    distortions and excludes the unit background contribution.
 #
 # 7) Subject-level Aggregation
-#    Subject-level PF and CoG are computed as the mean of the channel-wise
+#    Subject-level PF and CoG are computed as the median of the channel-wise
 #    estimates across valid channels.
 #
 # 8) Minimum Channel Constraint
@@ -452,15 +459,18 @@ function peakFrequency(𝐒::AbstractVector, sr, t, frange, maxiter, maxmins, ma
             push!(peakList, pk.peakHz)
             push!(validChannelIdx, ch)
 
-            # Channel-wise CoG computed on the final spectrum used for peak detection
+            # Channel-wise CoG computed on the positive spectral
+            # excess above the aperiodic background, before smoothing.
+
             α1 = f2b(first(frange), sr, t; DC=DC)
             α2 = f2b(last(frange), sr, t; DC=DC)
 
-            Sused = pk.spectrum
-            num = sum(f[j] * Sused[j] for j in α1:α2)
-            den = sum(Sused[j] for j in α1:α2)
+            weights = max.(spec_detr[α1:α2] .- 1.0, 0.0)
 
-            if den > 0
+            den = sum(weights)
+
+            if isfinite(den) && den > 0
+                num = sum(f[α1:α2] .* weights)
                 push!(cogList, num / den)
             end
         end
@@ -475,7 +485,7 @@ function peakFrequency(𝐒::AbstractVector, sr, t, frange, maxiter, maxmins, ma
         end
 
         if length(cogList) >= minValidChannels
-            CoG[i] = mean(cogList)
+            CoG[i] = median(cogList)
         else
             CoG[i] = missing
             ok = false
