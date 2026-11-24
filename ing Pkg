@@ -1,0 +1,21 @@
+[1mdiff --git a/src/PeakFrequency.jl b/src/PeakFrequency.jl[m
+[1mindex 4dffd91..fef44ae 100644[m
+[1m--- a/src/PeakFrequency.jl[m
+[1m+++ b/src/PeakFrequency.jl[m
+[36m@@ -2,6 +2,7 @@[m [mmodule PeakFrequency[m
+ [m
+ [m
+ using FourierAnalysis, DataFrames[m
+[32m+[m[32musing Statistics: mean, median[m
+ [m
+ export  remove_aperiodic,[m
+         find_peak,[m
+[36m@@ -466,7 +467,7 @@[m [mfunction peakFrequency(𝐒::AbstractVector, sr, t, frange, maxiter, maxmins, ma[m
+ [m
+         # Subject-level aggregation[m
+         if length(peakList) >= minValidChannels[m
+[31m-            PF[i] = mean(peakList)[m
+[32m+[m[32m            PF[i] = median(peakList)[m
+         else[m
+             PF[i] = missing[m
+             ok = false[m

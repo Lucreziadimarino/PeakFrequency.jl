@@ -2,6 +2,7 @@ module PeakFrequency
 
 
 using FourierAnalysis, DataFrames
+using Statistics: mean, median
 
 export  remove_aperiodic,
         find_peak,
@@ -466,7 +467,7 @@ function peakFrequency(𝐒::AbstractVector, sr, t, frange, maxiter, maxmins, ma
 
         # Subject-level aggregation
         if length(peakList) >= minValidChannels
-            PF[i] = mean(peakList)
+            PF[i] = median(peakList)
         else
             PF[i] = missing
             ok = false
